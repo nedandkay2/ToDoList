@@ -49,9 +49,22 @@ class ToDoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
-        cell.textLabel?.text = "hello"
+        let toDo = toDos[indexPath.row]
+        
+        if toDo.important {
+            cell.textLabel?.text = "📌" + toDo.name
+        } else {
+            cell.textLabel?.text = toDo.name
+        }
+        
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let addVC = segue.destination as! AddToDoViewController
+        addVC.previousVC = self
     }
 
 }
+
+
