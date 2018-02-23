@@ -26,15 +26,21 @@ class AddToDoViewController: UIViewController {
     
     @IBAction func addTapped(_ sender: Any) {
         let toDo = ToDo()
-        toDo.name = titleTextField.text!
-        toDo.important = importantSwitch.isOn
         
-        previousVC.toDos.append(toDo)
-        previousVC.tableView.reloadData()
+        // check to see titleTextField is not nil and unwrap
+        if let titleText = titleTextField.text {
+            
+            toDo.name = titleTextField.text!
+            toDo.important = importantSwitch.isOn
+            
+            previousVC.toDos.append(toDo)
+            previousVC.tableView.reloadData()
+            
+            // function sends user back to todo list screen after
+            // clicking add button
+            navigationController?.popViewController(animated: true)
+        }
         
-        // function sends user back to todo list screen after
-        // clicking add button
-        navigationController?.popViewController(animated: true)
     }
     
 }
