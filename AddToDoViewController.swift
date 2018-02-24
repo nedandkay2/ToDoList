@@ -36,8 +36,7 @@ class AddToDoViewController: UIViewController {
             previousVC.toDos.append(toDo)
             previousVC.tableView.reloadData()
             
-            // function sends user back to todo list screen after
-            // clicking add button
+            // function sends user back to todo list screen after clicking add button
             navigationController?.popViewController(animated: true)
         }
         

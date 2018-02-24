@@ -40,10 +40,55 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Rrp-Ki-Q3K" kind="show" identifier="moveToComplete" id="48o-z9-zHN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMt-B4-BPQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="39" y="8"/>
+        </scene>
+        <!--Complete View Controller-->
+        <scene sceneID="XQv-D5-i9v">
+            <objects>
+                <viewController id="Rrp-Ki-Q3K" customClass="CompleteViewController" customModule="ToDo_List" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Guw-8d-mOU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEy-oo-I9m">
+                                <rect key="frame" x="10" y="103" width="355" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OgR-ea-J0U">
+                                <rect key="frame" x="136.5" y="213" width="101" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Complete"/>
+                                <connections>
+                                    <action selector="completeButtonPressed:" destination="Rrp-Ki-Q3K" eventType="touchUpInside" id="gmI-bM-HRB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iEy-oo-I9m" firstAttribute="centerX" secondItem="Guw-8d-mOU" secondAttribute="centerX" id="P4G-5F-NYg"/>
+                            <constraint firstItem="OgR-ea-J0U" firstAttribute="top" secondItem="iEy-oo-I9m" secondAttribute="bottom" constant="68" id="S0Y-Zn-zab"/>
+                            <constraint firstItem="iEy-oo-I9m" firstAttribute="leading" secondItem="KcD-TD-Amf" secondAttribute="leading" constant="10" id="nHJ-S3-fSk"/>
+                            <constraint firstItem="OgR-ea-J0U" firstAttribute="centerX" secondItem="Guw-8d-mOU" secondAttribute="centerX" id="sNn-Iv-ism"/>
+                            <constraint firstItem="KcD-TD-Amf" firstAttribute="trailing" secondItem="iEy-oo-I9m" secondAttribute="trailing" constant="10" id="xv3-j2-wV3"/>
+                            <constraint firstItem="iEy-oo-I9m" firstAttribute="top" secondItem="KcD-TD-Amf" secondAttribute="top" constant="39" id="zdd-7P-8XI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KcD-TD-Amf"/>
+                    </view>
+                    <connections>
+                        <outlet property="completeLabel" destination="iEy-oo-I9m" id="Gt2-ah-QSD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YdF-4W-fKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55.200000000000003" y="814.54272863568224"/>
         </scene>
         <!--Add To Do View Controller-->
         <scene sceneID="m91-GI-leX">
@@ -59,10 +104,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAN-lB-Iyr">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAN-lB-Iyr">
                                 <rect key="frame" x="20" y="143" width="335" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Important" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LU4-a1-QG3">
